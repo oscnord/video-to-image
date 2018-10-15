@@ -31,7 +31,7 @@ print("Working...")
 while success:
   gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
   fm = variance_of_laplacian(gray)
-  print(step, frameStep)
+  
   if frameStep == step:
     if fm >  args["threshold"]:
       savedFrame += 1
