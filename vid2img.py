@@ -1,5 +1,7 @@
-import argparse
+import sys
 import cv2
+import argparse
+
 
 print("OpenCV version"+cv2.__version__)
 
@@ -24,8 +26,7 @@ optional.add_argument("-s", "--step", type=int,
 args = vars(parser.parse_args())
 
 if not args["path"]:
-    print("Please supply a video file '-p <path>'")
-    exit()
+    sys.exit("Please supply a video file '-p <path>'")
 
 vidcap = cv2.VideoCapture(args["path"])
 
@@ -55,5 +56,4 @@ while success:
     count += 1
     frameStep += 1
 
-print("Saved frames: "+str(savedFrame))
-print("Discarded frames: "+str(blurryFrame))
+sys.exit("Done!")
