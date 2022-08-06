@@ -6,7 +6,7 @@ Simple script to convert a video to an image sequence with blur detection using 
 
 ### Dependencies
 
-    * OpenCV
+* OpenCV
 
 ### Example
 
