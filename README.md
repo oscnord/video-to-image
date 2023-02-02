@@ -18,6 +18,7 @@ optional arguments:
   -t THRESHOLD, --threshold THRESHOLD
                         default threshold is 100.0. Use 10-30 for motion
   -s STEP, --step STEP  frame step size
+  --save SAVE           path to save the frames in a directory
 ```
 
 Example usage:
