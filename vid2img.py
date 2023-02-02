@@ -1,6 +1,7 @@
 import sys
 import cv2
 import argparse
+import os
 
 
 print("OpenCV version"+cv2.__version__)
@@ -23,6 +24,7 @@ optional.add_argument("-t", "--threshold", type=float, default=100.0,
                       help="default threshold is 100.0. Use 10-30 for motion")
 optional.add_argument("-s", "--step", type=int,
                       default=1, help="frame step size")
+optional.add_argument("--save", default= "", type= str, help= "path to save the frames in a directory")
 args = vars(parser.parse_args())
 
 if not args["path"]:
@@ -46,7 +48,8 @@ while success:
     if frameStep == step:
         if fm > args["threshold"]:
             savedFrame += 1
-            cv2.imwrite("frame%d.png" % count, image)
+            image_path = os.path.join(args["save"], "frame%d.png" % count)
+            cv2.imwrite(image_path, image)
         frameStep = 0
 
     if fm < args["threshold"]:
