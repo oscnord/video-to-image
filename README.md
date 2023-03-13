@@ -24,5 +24,5 @@ optional arguments:
 Example usage:
 
 ```shell
-python3 vid2img.py -p video.mp4
+python3 vid2img.py -p ./video.mp4
 ```
